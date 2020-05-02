@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    
+    
+}
+
+/* --------------- navbar ----------------- */
+
+.nav{
+    background: white;
+    padding: 0 2rem;
+    height: 0rem;
+    min-height: 10vh;
+    overflow: hidden;
+    transition: height 1s ease-in-out;
+}
+
+.nav .nav-menu{    
+    justify-content: space-between;
+}
+
+.nav .toggle-collapse{
+    position: absolute;
+    top: 0%;
+    width: 90%;
+    cursor: pointer;
+    display: none;
+}
+
+.nav .toggle-collapse .toggle-icons{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.7rem 0;
+}
+
+.nav .toggle-collapse .toggle-icons i{
+    font-size: 1.4rem;
+    color: var(--text-gray);
+}
+
+.collapse{
+    height: 30rem;
+}
+
+.nav .nav-items{
+    display: flex;
+    margin: 0;
+}
+
+.nav .nav-items .nav-link{
+    padding: 1.6rem 1rem;
+    font-size: 1.1rem;
+    position: relative;
+    font-family: var(--Abel);
+    font-size: 1.1rem;
+}
+
+.nav .nav-items .nav-link:hover{
+    background-color: var(--midnight);
+}
+
+.nav .nav-items .nav-link:hover a{
+    color: var(--white);
+}
+
+.nav .nav-brand a{
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    display: block;
+    font-family: var(--Lexend);
+    font-size: 1.6rem;
+}
+
+.nav .social{
+    padding: 1.4rem 0
+}
+
+.nav .social i{
+    padding: 0 .2rem;
+}
+
+.nav .social i:hover{
+    color: #a1c4cf;
+}
+
+/* -------x------- navbar ---------x------- */
+
+
+
+
+/* Conatiner Style */
+
+body{
+    
+    background: url(9d4d07ca7d591bb3cd3d9f4df2624bbf.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main{
+    position:absolute;
+    top: 2vh;
+    left: 34vw;
+    width: 32vw;
+    min-height: 96vh;
+    padding: 18px;
+    padding-bottom: 25px;
+    margin-bottom: 2vh;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background: -webkit-linear-gradient(60deg,#c31432 30%,#240b36 90%);
+    
+}
+
+h1{
+    position: relative;
+    text-align: center;
+    color: #79c000;
+    font-size: 48px;
+    margin: 25px auto 40px;
+    letter-spacing: 8px;
+    word-spacing: 11px;
+    padding: 10px;
+
+    /* this makes the heading Slide In from the top of webpage */
+    animation-name: slideInFromTop;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+}
+
+h2{
+    position: relative;
+    text-align: center;
+    color: #79c000;
+    font-size: 16px;
+    margin: 25px auto 40px;
+    letter-spacing: 2px;
+    word-spacing: 0px;
+    padding-top: 0px;
+
+    /* this makes the heading Slide In from the top of webpage */
+    animation-name: slideInFromTop;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+}
+
+
+/* Basic form styling */
+
+.form_elements{
+    position: relative;  
+    padding: 15px;
+}
+
+label{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    pointer-events: none;
+    color: #fff;
+    transition: all .4s;
+}
+
+.input_field{
+    position: relative;
+    background: transparent;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #999;
+    box-sizing: border-box;
+}
+
+
+/* Creating floating Label */
+/*label will change their positon when input is focused */
+.input_field:focus ~ label,
+.input_field:valid ~ label {
+    top: -10px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #79c000;
+}
+
+
+/* bottom border animation */
+
+.border{
+    position: absolute;
+    top: 53%;
+    left: 3.4%;
+    width: 0;
+    background-color:#eee;
+    transition:  width 0.3s ;
+}
+
+
+#border4 /* overriding position of textarea */
+{
+    top: 56.5%;
+}
+
+
+/* Border will progress as the input is focused */
+.input_field:focus ~ .border,
+.input_field:valid ~ .border {
+    width: 93%;
+    height: 3px;
+    background-color: #79c000;
+}
+
+
+/* Inputs and label present at odd positon will slide in from the left of the webpage */
+.form_elements:nth-child(odd){
+    animation-name: slideInFromLeft;
+    animation-duration: .8s;
+}
+
+
+/* Inputs and label present at odd positon will slide in from the left of the webpage */
+.form_elements:nth-child(even){
+    animation-name: slideInFromRight;
+    animation-duration: .8s;
+}
+
+
+/* Button Styling */
+
+button{
+    position: relative;
+    left: 10px;
+ 
+    display: flex;      /* Using display flex to align button text and icon properly */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    color: #fff;
+    font-size: 16px;
+    font-weight: 100;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    width: 200px;
+    padding: 20px;
+    padding-left: 34px;
+    cursor: pointer;
+    border: none;
+    background: #7ac000de;
+    border-radius: 4px;
+
+    animation-name: fadeIn;
+    animation-duration: 2.2s;
+}
+
+button:hover{
+    background: #79c000c5;
+}
+
+/* Using keyframes to animate the form elements */
+@keyframes slideInFromTop {
+    from{top:-20%}
+    to{top:0%}
+}
+@keyframes slideInFromLeft {
+    from{opacity: 0; left: -100%;}
+    to{opacity: 1; left: 0;}
+}
+@keyframes slideInFromRight{
+    from{opacity: 0; right: -100%;}
+    to{opacity: 1; right:0;}
+}
+@keyframes fadeIn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+
+
+/**********************************
+   Responsive Design starts here 
+**********************************/
+
+
+/* for small screen mobiles */
+
+@media (max-width:360px){
+    *{
+        margin: 0;
+    }
+    body{
+        background: #aaa;
+    }
+    main{
+        top: 2vh;
+        width: 98%;
+        min-height: 95vh;
+        margin-bottom: 2.5vh;
+        left: 1%;
+        
+        
+    }
+    h1{
+        font-size: 30px;
+        letter-spacing: 5px;
+        padding: 5px;
+    }
+    .form_elements{
+        padding: 5px;
+    }
+    .input_field{
+        margin-bottom: 40px !important;
+        padding-left: 5px;
+    }
+    .input_field:focus ~ label,
+    .input_field:valid ~ label {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+
+    }
+    textarea{
+        margin-bottom: 50px !important;
+    }
+
+    label{
+        left: 8px;
+    }
+
+    .input_field:focus ~ .border,
+    .input_field:valid ~ .border {
+        height: 2px;
+    }
+
+    button{
+        position: relative;
+        margin-bottom: 20px;
+        left: 8px;
+        width: 150px;
+        padding-left: 12px;
+        padding: 12px;
+        font-size: 11px;
+        
+    }
+    
+
+}
+
+/* for mobiles of medium and larger screen */
+
+@media (min-width:361px) and (max-width: 426px) {
+    
+    *{
+        margin: 0;
+    }
+    body{
+        background: #aaa;
+    }
+    main{
+        top: 4vh;
+        width: 90%;
+        min-height: 95vh;
+        margin-bottom: 1vh;
+        left: 5%;
+        padding-bottom: 15px;
+        
+    }
+    h1{
+        font-size: 36px;
+        letter-spacing: 5px;
+        padding: 5px;
+    }
+    .form_elements{
+        padding: 5px;
+    }
+    .input_field{
+        margin-bottom: 35px;
+        padding-left: 2px;
+        margin-left: 8px;
+    }
+    .input_field:focus ~ label,
+    .input_field:valid ~ label {
+        font-size: 15px;
+        letter-spacing: 1.5px;
+
+    }
+
+    label{
+        left: 12px;
+    }
+
+    .input_field:focus ~ .border,
+    .input_field:valid ~ .border {
+        height: 2px;
+    }
+
+    button{
+        position: relative;
+        left: 10px;
+        margin-bottom: 20px;
+        width: 160px;
+        padding-left: 8px;
+        padding: 15px;
+        font-size: 14px;
+   
+    }
+
+}
+
+/* For tablets */
+
+
+@media (min-width: 427px) and (max-width: 769px) {
+    
+
+    body{
+        background: url(9d4d07ca7d591bb3cd3d9f4df2624bbf.jpg);
+       /* background-size: 1150px;*/
+        
+    }
+    main{
+        top: 2vh;
+        width: 50%;
+        min-height: 96vh;
+        margin-bottom: 2vh;
+        left: 25%;
+        top: 1%;
+        padding-bottom: 10px;
+        
+    }
+    h1{
+        font-size: 40px;
+        letter-spacing: 5px;
+        padding: 10px;
+    }
+    .form_elements{
+        padding: 10px;
+    }
+    .input_field{
+        font-size: 16px;
+        margin-bottom: 20px;
+        padding-left: 2px;
+        margin-left: 6px;
+    }
+    .input_field:focus ~ label,
+    .input_field:valid ~ label {
+        font-size: 15px;
+        letter-spacing: 1.5px;
+
+    }
+
+    label{
+        left: 20px;
+    }
+
+    .input_field:focus ~ .border,
+    .input_field:valid ~ .border {
+        height: 2px;
+    }
+
+    button{
+        margin-top: 0;
+        left: 30px;
+        width: 170px;
+        font-size: 15px;
+        padding-left: 8px;
+        padding: 15px;
+    }
+}
+
+
+/* For laptops of small screen*/
+ 
+@media (min-width: 770px) and (max-width:1135px) {
+
+    body{
+        background: url(9d4d07ca7d591bb3cd3d9f4df2624bbf.jpg);
+       /* background-size: 1150px !important;*/    
+    }
+
+    main{
+        top: 2vh;
+        width: 40%;
+        min-height: 96vh;
+        margin-bottom: 2vh;
+        left: 30%;
+        top: 2%;
+        font-size: 28px;
+        padding-bottom: 10px;
+        
+    }
+    h1{
+        font-size: 36px;
+        letter-spacing: 5px;
+        padding: 8px;
+    }
+    .form_elements{
+        padding: 8px;
+    }
+    .input_field{
+        font-size: 16px;
+        margin-bottom: 20px;
+        padding-left: 2px;
+        margin-left: 6px;
+    }
+    .input_field:focus ~ label,
+    .input_field:valid ~ label {
+        font-size: 15px;
+        letter-spacing: 1.5px;
+
+    }
+
+    label{
+        font-size: 18px;
+        left: 15px;
+    }
+
+    .input_field:focus ~ .border,
+    .input_field:valid ~ .border {
+        height: 2px;
+    }
+
+    button{
+        margin-top: 10px;
+        left: 30px;
+        width: 170px;
+        font-size: 15px;
+        padding-left: 8px;
+        padding: 15px;
+    }
+
+}
+
